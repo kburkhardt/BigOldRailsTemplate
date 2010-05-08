@@ -208,7 +208,7 @@ application_styles = load_snippet('application_styles', design)
 
 file 'public/stylesheets/application.css', load_pattern('public/stylesheets/application.css', 'default', binding)
 
-generate(:formtastic_stylesheets)
+generate(:formtastic)
 
 commit_state "stylesheets"
 
