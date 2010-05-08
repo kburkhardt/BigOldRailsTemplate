@@ -6,15 +6,15 @@
 # rails branch options: any branch in the http://github.com/rails/rails/tree/master repo
 rails_branch: 2-3-stable
 # database options: postgresql (default), mysql, sqlite
-database: postgresql
+database: sqlite
 # exception options: exceptional (default), hoptoad
-exception_handling: exceptional
+exception_handling: hoptoad
 # monitoring options: new_relic (default), scout
 monitoring: new_relic
 # vendor branch management: piston (default), braid, git (submodules), none
-branch_management: piston
+branch_management: none
 # rails strategy: vendored (default), gem, symlinked
-rails_strategy: vendored
+rails_strategy: gem
 # link_rails_root is only used if rails_strategy == symlinked
 link_rails_root: ~/rails
 # IE6 blocking: none, light (default), ie6nomore
@@ -22,17 +22,17 @@ ie6_blocking: light
 # javascript library: prototype (default), jquery
 javascript_library: prototype
 # template engine: erb (default), haml
-template_engine: erb
+template_engine: haml
 # Design: none (default), bluetrip, compass
-design: none
+design: compass
 # compass_css_framework is only used if design == compass: blueprint (default), 960
 compass_css_framework: blueprint
 # Require users to activate after creating an account: false (default), true
 require_activation: false
 # mocking library to use in tests: rr, mocha (default)
-mocking: mocha
+mocking: rr
 # controller_type: rails (default), inherited_resources
-controller_type: rails   
+controller_type: inherited_resources   
 # mail_in_development: inaction_mailer (default), mock_smtp
 mail_in_development: inaction_mailer
 # post-creation options: pick one or more. 
@@ -48,11 +48,11 @@ mail_in_development: inaction_mailer
 #   ci:
 # You could even have further options under the ci key to control that part of the setup
 post_creation:
-  default:
+  github:
 # GitHub options. These are only used if 'github' is set as one of the post_creation options
-github_username: your_user_name
-github_token: 123456 # found at https://github.com/account
-github_public: 1 # 1 to create a public repo, 0 to create a private repo
+github_username: howdycloud
+github_token: b6a7e2342b5140b3bffefce3ccafa4eb # found at https://github.com/account
+github_public: 0 # 1 to create a public repo, 0 to create a private repo
 #
 # These options can be omitted, and the template will default to sensible behavior
 #
@@ -72,26 +72,26 @@ smtp_domain: example.com
 smtp_username: mikeg1@example.com
 smtp_password: password
 # Capistrano information for config/deploy.rb
-capistrano_user: webadmin
+capistrano_user: deploy
 capistrano_repo_host: github.com
 capistrano_production_host: 111.111.111.111
 capistrano_staging_host: 111.111.111.111
 # cap_gun info (also for config/deploy.rb)
-cap_gun_address: smtp.gmail.com
+cap_gun_address: mail.howdycloud.com
 cap_gun_port: 587
-cap_gun_user_name: someone@gmail.com
-cap_gun_password: password
-cap_gun_recipients: "%w[someone@example.com, someone_else@example.com]"
+cap_gun_user_name: noreply@howdycloud.com
+cap_gun_password: 33jazz33
+cap_gun_recipients: "%w[bennett@howdycloud.com]"
 # API keys
 # Note that Exceptional generates a new API key for each application
 exceptional_api_key: PASTE_YOUR_API_KEY_HERE
 # Note that Hoptoad generates a new API key for each application
-hoptoad_api_key: PASTE_YOUR_API_KEY_HERE
-newrelic_api_key: PASTE_YOUR_API_KEY_HERE
+hoptoad_api_key: e2df56ff5c3989847aceb9fb71fe3348
+newrelic_api_key: 108fc8487b83908c735c7bbdcc69a0e190128ab4
 # Return address info for app/models/notifier.rb
-notifier_email_from: Lark Group <noreply@example.com>
-default_url_options_host: example.com      
+notifier_email_from: Howdy Cloud <noreply@howdycloud.com>
+default_url_options_host: example.com
 # used to allow access to the RSS feed from admin_data
-admin_data_user_id: my_user
-admin_data_password: my_password
+admin_data_user_id: admin
+admin_data_password: password
 

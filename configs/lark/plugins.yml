@@ -17,9 +17,9 @@ hashdown:
 object_daddy:
   :options:
     :git: :git://github.com/flogic/object_daddy.git
-parallel_specs:
+parallel_tests:
   :options:
-    :git: :git://github.com/grosser/parallel_specs.git
+    :git: :git://github.com/grosser/parallel_tests.git
 rack-bug:
   :options:
     :git: :git://github.com/brynary/rack-bug.git
