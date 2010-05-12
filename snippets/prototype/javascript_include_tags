@@ -1,1 +1,4 @@
-    - public/javascripts/*.js
+    - public/javascripts/prototype.js
+    - public/javascripts/effects.js
+    - public/javascripts/dragdrop.js
+    - public/javascripts/controls.js

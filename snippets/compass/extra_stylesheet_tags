@@ -1,5 +1,5 @@
-		- public/stylesheets/screen.css
-	print:
-		- public/stylesheets/print.css
-	ie:
-		- public/stylesheets/ie.css
+    - public/stylesheets/screen.css
+  print:
+    - public/stylesheets/print.css
+  ie:
+    - public/stylesheets/ie.css

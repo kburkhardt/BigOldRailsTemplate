@@ -86,6 +86,12 @@ if design == "compass"
   compass_sass_dir = "app/stylesheets"
   compass_css_dir = "public/stylesheets"
 
+  inside('app') do
+    run('mkdir stylesheets')
+  end
+  inside('app/stylesheets') do
+    run('mkdir sass')
+  end
 
   # load any compass framework plugins
   if compass_css_framework =~ /960/
@@ -208,7 +214,7 @@ application_styles = load_snippet('application_styles', design)
 
 file 'public/stylesheets/application.css', load_pattern('public/stylesheets/application.css', 'default', binding)
 
-generate(:formtastic)
+generate('formtastic')
 
 commit_state "stylesheets"
 
@@ -501,15 +507,15 @@ if template_engine == "haml" || design == "compass"
   FileUtils.mkdir("public/stylesheets/sass")
   Dir["public/stylesheets/**/*.css"].each do |file|
     sass_file = file.gsub(/\.css$/, '.sass')
-    run "css2sass #{file} #{sass_file}"
-    run "mv #{sass_file} public/stylesheets/sass/#{File.basename(sass_file)}"
+    run "sass-convert #{file} #{sass_file}"
+    run "mv #{sass_file} public/stylesheets/#{File.basename(sass_file)}"
   end
 end
 
 if design == "compass"
   in_root do
     Dir["public/stylesheets/**/*.sass"].each do |file|
-      run "mv #{file} app/stylesheets/sass/#{File.basename(file)}"
+      run "mv #{file} app/stylesheets/#{File.basename(file)}"
     end
   end
 end
@@ -554,7 +560,7 @@ end
 git_branch_setup
 
 # post-creation work
-execute_post_creation_hooks
+#execute_post_creation_hooks
 
 # Success!
 puts "SUCCESS!"

@@ -32,7 +32,7 @@ require_activation: false
 # mocking library to use in tests: rr, mocha (default)
 mocking: rr
 # controller_type: rails (default), inherited_resources
-controller_type: inherited_resources   
+controller_type: rails   
 # mail_in_development: inaction_mailer (default), mock_smtp
 mail_in_development: inaction_mailer
 # post-creation options: pick one or more. 
